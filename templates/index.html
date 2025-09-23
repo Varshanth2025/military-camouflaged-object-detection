@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camouflage Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            max-width: 100%;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .upload-box {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border: 2px dashed #4CAF50;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        input[type="file"] {
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Camouflage Detection</h1>
+        <p>This project uses YOLOv5 and YOLOv8 models to detect camouflage objects like people, ammunitions, suspects, and vehicles. Upload an image and run the detection to see the results from multiple models (n, s, m, l, x).</p>
+        <p>Upload camouflaged hiding army or weapons</p>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="upload-box">
+                <input type="file" name="file" required>
+            </div>
+            <input type="submit" value="Submit Image">
+        </form>
+    </div>
+</body>
+</html>

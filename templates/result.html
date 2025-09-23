@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1400px;  /* Adjust width to fit both rows */
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .model-row {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .model-row img {
+            width: 100%;
+            max-width: 400px;  /* Keep images large and clear */
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #4CAF50;
+        }
+        .image-label {
+            margin-top: 10px;
+            color: #555;
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detection Results</h1>
+        <p>Here are the results of the camouflage detection models:</p>
+
+        <h2>YOLOv5 Models</h2>
+        <div class="model-row">
+            {% for model, output in output_files.items() %}
+                {% if "YOLOv5" in model %}
+                    <div class="result-item">
+                        <img src="{{ url_for('send_output_file', filename=output) }}" alt="{{ model }}">
+                        <div class="image-label">{{ model }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <h2>YOLOv8 Models</h2>
+        <div class="model-row">
+            {% for model, output in output_files.items() %}
+                {% if "YOLOv8" in model %}
+                    <div class="result-item">
+                        <img src="{{ url_for('send_output_file', filename=output) }}" alt="{{ model }}">
+                        <div class="image-label">{{ model }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <a href="/">Upload another image</a>
+    </div>
+</body>
+</html>
