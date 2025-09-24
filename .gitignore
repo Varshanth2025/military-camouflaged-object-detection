@@ -3,4 +3,4 @@ best8X.pt
 bestM.pt
 
 .venv
-.venv/
+.venv/models/*.pt
