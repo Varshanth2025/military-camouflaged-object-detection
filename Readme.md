@@ -1,7 +1,6 @@
 <div align="center">
-<img width="30%" src="https://user-images.githubusercontent.com/72341453/134747028-7e2d90cc-a92f-4f66-815e-54a0d50cca54.PNG">
 
-# Camofledge: Camouflage Detection Web App
+# Camouflage Detector: Military Objectss Camouflage Detection Web App
 
 </div>
 
@@ -56,3 +55,36 @@ The platform is designed for **rapid prototyping**, **easy deployment**, and a *
 ```bash
 git clone https://github.com/your-username/camofledge.git
 ```
+
+### Install Requirements
+
+Download the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the App
+
+```bash
+python app.py
+```
+
+## 📸 App Preview
+
+<table width="100%"> 
+<tr>
+<td width="50%">      
+<p align="center">
+  Home & Upload Image Page
+</p>
+<img src="https://github.com/Varshanth2025/military-camouflaged-object-detection/blob/main/static/images/home%20and%20image%20uploading%20page.png">
+</td> 
+<td width="50%">
+<p align="center">
+  Detection Page
+</p>
+<img src="https://github.com/Varshanth2025/military-camouflaged-object-detection/blob/main/static/images/detection.png">  
+</td>
+</tr>
+</table>
